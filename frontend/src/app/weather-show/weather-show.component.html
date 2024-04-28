@@ -1,0 +1,39 @@
+<!-- src/app/weather/weather.component.html -->
+<div
+  class="weather-container"
+  [style.background-image]="'url(' + getBackgroundImage() + ')'"
+>
+  <div class="container my-3">
+    <h2>Weather App</h2>
+
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter city name"
+        [(ngModel)]="city"
+      />
+      <button
+        class="btn btn-primary"
+        (click)="getWeatherByCity()"
+      >
+        Get Weather by City
+      </button>
+    </div>
+
+    <div *ngIf="weatherData" class="card mt-3">
+      <div class="card-body">
+        <h3 class="card-title">Weather Information</h3>
+        <strong>{{ weatherData.city }}</strong>, {{ weatherData.country }}<br>
+        Temperature: {{ weatherData.temperature }}°C<br>
+        Humidity: {{ weatherData.humidity }}%<br>
+        Wind Speed: {{ weatherData.wind_speed }} km/h<br>
+        Weather: {{ weatherData.weather_description }}
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>

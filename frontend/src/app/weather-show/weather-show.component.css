@@ -1,0 +1,8 @@
+/* src/app/weather/weather.component.css */
+.weather-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; /* Ensures the background covers the full viewport */
+  }
+  
